@@ -18,19 +18,20 @@ export default function Header() {
           <Link href="/" className="text-2xl font-bold text-logo">
             Chriztone
           </Link>
-          <span className="text-black text-base font-light hidden sm:block">•</span>
         </div>
         <nav className="hidden lg:flex items-center gap-x-[30px] absolute left-1/2 -translate-x-1/2">
           {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className={`text-base text-gray-500 hover:text-primary transition-colors ${
-                link.label === 'Home' ? 'font-bold' : ''
-              }`}
-            >
-              {link.label}
-            </Link>
+            <div key={link.label} className="flex items-center gap-x-2.5">
+                {link.label === 'Home' && <span className="text-black text-base font-light">•</span>}
+                <Link
+                href={link.href}
+                className={`text-base text-gray-500 hover:text-primary transition-colors ${
+                    link.label === 'Home' ? 'font-bold' : ''
+                }`}
+                >
+                {link.label}
+                </Link>
+            </div>
           ))}
         </nav>
         <div className="flex items-center gap-4">
