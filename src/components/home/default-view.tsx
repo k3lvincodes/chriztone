@@ -29,13 +29,13 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
                 Graphics Designer
                 </span>
             </h1>
-            <p className="text-lg text-gray-600 max-w-md">
+            <p className="text-lg text-gray-500 max-w-lg">
                 Whether you're a startup or enterprise. Get premium app and website designs that inspire action, and drive success.
             </p>
         </div>
 
-        <Card className="max-w-md shadow-lg border-gray-200">
-            <div className="bg-primary text-primary-foreground rounded-t-lg py-3 px-6 font-bold text-lg">
+        <Card className="max-w-md shadow-lg rounded-xl">
+            <div className="bg-primary text-primary-foreground rounded-t-xl py-3 px-6 font-bold text-lg">
                 Graphics Design Services
             </div>
             <CardContent className="pt-6">
@@ -60,15 +60,18 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
 
       <div className="relative h-[700px] flex items-center justify-center">
         <div className="absolute top-0 transform -translate-x-1/4 -rotate-12">
-          <PhoneMockup className="w-[280px] h-[570px] bg-white">
-            <div className="w-full h-full bg-accent p-4 text-white">
-              <h2 className="font-bold text-xl">Classify transaction</h2>
+          <PhoneMockup className="w-[300px] h-[550px] bg-pink-200">
+            <div className="w-full h-full p-4 text-white" style={{background: 'rgb(255,192,203)'}}>
+                <div className="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-white"><path d="m15 18-6-6 6-6"/></svg>
+                    <h2 className="font-bold text-xl">Classify transaction</h2>
+                </div>
               <p className="text-sm opacity-80 mt-1">is a transaction into a</p>
             </div>
           </PhoneMockup>
         </div>
         <div className="absolute bottom-0 transform translate-x-1/4 rotate-3">
-          <PhoneMockup className="w-[320px] h-[650px] shadow-2xl">
+          <PhoneMockup className="w-[350px] h-[600px] shadow-2xl">
             <div className="w-full h-full bg-white p-4 space-y-4 overflow-y-auto">
               <div className="text-center">
                 <p className="text-xl font-bold">Subscribe</p>
@@ -87,7 +90,7 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
                 </div>
               </div>
               <div className="space-y-4">
-                <div className="font-semibold">Jack <span className="font-normal text-gray-400">1 Day Ago</span></div>
+                <div className="font-semibold text-sm">Jack <span className="font-normal text-gray-400">1 Day Ago</span></div>
                 <div className="flex gap-2">
                     <Image src="https://picsum.photos/150/150" data-ai-hint="abstract portrait" alt="Post 1" width={150} height={150} className="rounded-lg w-1/2 object-cover" />
                     <Image src="https://picsum.photos/150/151" data-ai-hint="musician neon" alt="Post 2" width={150} height={150} className="rounded-lg w-1/2 object-cover" />
