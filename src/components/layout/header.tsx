@@ -48,9 +48,6 @@ export default function Header() {
               <SheetContent side="right">
                 <SheetTitle className="sr-only">Menu</SheetTitle>
                 <div className="flex flex-col gap-6 p-6">
-                  <Link href="/" className="text-2xl font-bold text-logo mb-4">
-                    Chriztone
-                  </Link>
                   <nav className="flex flex-col gap-4">
                     {navLinks.map((link) => (
                       <Link
