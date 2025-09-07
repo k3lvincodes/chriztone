@@ -66,7 +66,7 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
             <p className="text-sm opacity-80 mt-1">is a transaction into a</p>
           </div>
         </PhoneMockup>
-        <PhoneMockup id="phone-one" className="w-[320px] h-[850px] absolute top-10 translate-x-12 shadow-2xl">
+        <PhoneMockup id="phone-one" className="w-[320px] h-[850px] absolute top-10 -translate-x-1/2 shadow-2xl">
           <div className="w-full h-full bg-white p-4 space-y-4 overflow-y-auto">
             <div className="text-center">
               <p className="text-xl font-bold">Subscribe</p>
