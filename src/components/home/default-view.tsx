@@ -57,7 +57,7 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
       </div>
 
       <div className="relative h-[700px] flex items-center justify-center">
-        <div className="absolute top-0 transform -translate-x-1/4 rotate-90">
+        <div className="absolute top-0 transform -translate-x-1/4">
           <PhoneMockup className="w-[300px] h-[550px] bg-pink-200">
             <div className="w-full h-full p-4 text-white" style={{background: 'linear-gradient(to bottom, #FF80B4, #A020F0)'}}>
                 <div className="flex items-center gap-2">
@@ -68,7 +68,7 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
             </div>
           </PhoneMockup>
         </div>
-        <div className="absolute bottom-0 transform translate-x-1/4 rotate-90">
+        <div className="absolute bottom-0 transform translate-x-1/4">
           <PhoneMockup className="w-[350px] h-[600px] shadow-2xl">
             <div className="w-full h-full bg-white p-4 space-y-4 overflow-y-auto">
               <div className="text-center">
