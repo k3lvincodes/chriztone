@@ -23,14 +23,12 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
         <div className="space-y-5">
             <p className="text-3xl font-bold text-black">Hi! I'm Paul</p>
             <h1 className="text-5xl lg:text-7xl font-black !leading-tight">
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                UI/UX Designer &
+                <span className="text-[#9966FF]">UI</span><span className="text-[#00CC99]">/UX</span> <span className="text-black">Designer &amp;</span>
                 <br />
-                Graphics Designer
-                </span>
+                <span className="text-black">Graphics Designer</span>
             </h1>
-            <p className="text-lg text-gray-500 max-w-lg">
-                Whether you're a startup or enterprise. Get premium app and website designs that inspire action, and drive success.
+            <p className="text-lg text-gray-700 max-w-lg">
+                Whether you're a startup or enterprise. Get <span className="text-[#9966FF]">premium app and website</span> designs that inspire action, and drive success.
             </p>
         </div>
 
