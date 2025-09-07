@@ -56,56 +56,52 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
         </div>
       </div>
 
-      <div className="relative h-[700px] flex items-center justify-center">
-        <div className="absolute top-0 transform -translate-x-1/4">
-          <PhoneMockup className="w-[300px] h-[550px] bg-pink-200">
-            <div className="w-full h-full p-4 text-white" style={{background: 'linear-gradient(to bottom, #FF80B4, #A020F0)'}}>
-                <div className="flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-white"><path d="m15 18-6-6 6-6"/></svg>
-                    <h2 className="font-bold text-xl">Classify transaction</h2>
-                </div>
-              <p className="text-sm opacity-80 mt-1">is a transaction into a</p>
+      <div className="relative h-[900px] flex items-center justify-center -mb-32">
+        <PhoneMockup className="w-[300px] h-[800px] absolute top-0 -translate-x-12">
+          <div className="w-full h-full p-4 text-white" style={{background: 'linear-gradient(to bottom, #FF80B4, #A020F0)'}}>
+              <div className="flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-white"><path d="m15 18-6-6 6-6"/></svg>
+                  <h2 className="font-bold text-xl">Classify transaction</h2>
+              </div>
+            <p className="text-sm opacity-80 mt-1">is a transaction into a</p>
+          </div>
+        </PhoneMockup>
+        <PhoneMockup className="w-[320px] h-[850px] absolute top-10 translate-x-12 shadow-2xl">
+          <div className="w-full h-full bg-white p-4 space-y-4 overflow-y-auto">
+            <div className="text-center">
+              <p className="text-xl font-bold">Subscribe</p>
+              <p className="text-sm text-gray-500">Taste their own attention</p>
             </div>
-          </PhoneMockup>
-        </div>
-        <div className="absolute bottom-0 transform translate-x-1/4">
-          <PhoneMockup className="w-[350px] h-[600px] shadow-2xl">
-            <div className="w-full h-full bg-white p-4 space-y-4 overflow-y-auto">
+            <div className="flex justify-around">
               <div className="text-center">
-                <p className="text-xl font-bold">Subscribe</p>
-                <p className="text-sm text-gray-500">Taste their own attention</p>
+                <Image src="https://picsum.photos/80/80" data-ai-hint="portrait person" alt="Johny Vine" width={80} height={80} className="rounded-full mx-auto border-4 border-orange-400" />
+                <p className="font-bold mt-2">Johny Vine</p>
+                <p className="text-sm text-gray-500">643 Followers</p>
               </div>
-              <div className="flex justify-around">
-                <div className="text-center">
-                  <Image src="https://picsum.photos/80/80" data-ai-hint="portrait person" alt="Johny Vine" width={80} height={80} className="rounded-full mx-auto border-4 border-orange-400" />
-                  <p className="font-bold mt-2">Johny Vine</p>
-                  <p className="text-sm text-gray-500">643 Followers</p>
-                </div>
-                <div className="text-center">
-                   <Image src="https://picsum.photos/80/81" data-ai-hint="portrait person" alt="Nimasha" width={80} height={80} className="rounded-full mx-auto border-4 border-orange-400" />
-                  <p className="font-bold mt-2">Nimasha</p>
-                  <p className="text-sm text-gray-500">15453 Followers</p>
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="font-semibold text-sm">Jack <span className="font-normal text-gray-400">1 Day Ago</span></div>
-                <div className="flex gap-2">
-                    <Image src="https://picsum.photos/150/150" data-ai-hint="abstract portrait" alt="Post 1" width={150} height={150} className="rounded-lg w-1/2 object-cover" />
-                    <Image src="https://picsum.photos/150/151" data-ai-hint="musician neon" alt="Post 2" width={150} height={150} className="rounded-lg w-1/2 object-cover" />
-                </div>
-                <p className="text-xs text-gray-500">Music and reading make me happy, so I walked out of adversity, let me feel the vitality of life...</p>
-              </div>
-               <div className="space-y-4">
-                <div className="font-semibold text-sm">Bobbo <span className="font-normal text-gray-400">2 Day Ago</span></div>
-                <div className="flex gap-2">
-                    <Image src="https://picsum.photos/100/100" data-ai-hint="woman portrait" alt="Post 3" width={100} height={100} className="rounded-lg w-1/3 object-cover" />
-                    <Image src="https://picsum.photos/100/101" data-ai-hint="hand holding jar" alt="Post 4" width={100} height={100} className="rounded-lg w-1/3 object-cover" />
-                    <Image src="https://picsum.photos/100/102" data-ai-hint="statue neon" alt="Post 5" width={100} height={100} className="rounded-lg w-1/3 object-cover" />
-                </div>
+              <div className="text-center">
+                 <Image src="https://picsum.photos/80/81" data-ai-hint="portrait person" alt="Nimasha" width={80} height={80} className="rounded-full mx-auto border-4 border-orange-400" />
+                <p className="font-bold mt-2">Nimasha</p>
+                <p className="text-sm text-gray-500">15453 Followers</p>
               </div>
             </div>
-          </PhoneMockup>
-        </div>
+            <div className="space-y-4">
+              <div className="font-semibold text-sm">Jack <span className="font-normal text-gray-400">1 Day Ago</span></div>
+              <div className="flex gap-2">
+                  <Image src="https://picsum.photos/150/150" data-ai-hint="abstract portrait" alt="Post 1" width={150} height={150} className="rounded-lg w-1/2 object-cover" />
+                  <Image src="https://picsum.photos/150/151" data-ai-hint="musician neon" alt="Post 2" width={150} height={150} className="rounded-lg w-1/2 object-cover" />
+              </div>
+              <p className="text-xs text-gray-500">Music and reading make me happy, so I walked out of adversity, let me feel the vitality of life...</p>
+            </div>
+             <div className="space-y-4">
+              <div className="font-semibold text-sm">Bobbo <span className="font-normal text-gray-400">2 Day Ago</span></div>
+              <div className="flex gap-2">
+                  <Image src="https://picsum.photos/100/100" data-ai-hint="woman portrait" alt="Post 3" width={100} height={100} className="rounded-lg w-1/3 object-cover" />
+                  <Image src="https://picsum.photos/100/101" data-ai-hint="hand holding jar" alt="Post 4" width={100} height={100} className="rounded-lg w-1/3 object-cover" />
+                  <Image src="https://picsum.photos/100/102" data-ai-hint="statue neon" alt="Post 5" width={100} height={100} className="rounded-lg w-1/3 object-cover" />
+              </div>
+            </div>
+          </div>
+        </PhoneMockup>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { Instagram } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-black text-white relative z-10">
       <div className="container mx-auto max-w-7xl py-10 px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
         <Button size="lg" className="px-10 h-14 text-base font-bold">
           Contact Me
