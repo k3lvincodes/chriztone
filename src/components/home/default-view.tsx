@@ -22,7 +22,7 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
       <div className="space-y-10 md:pt-12">
         <div className="space-y-5">
             <p className="text-3xl font-bold text-black">Hi! I'm Paul</p>
-            <h1 className="text-5xl lg:text-7xl font-black !leading-tight">
+            <h1 className="text-[38px] font-black !leading-tight">
                 <span className="text-[#9966FF]">UI</span><span className="text-[#00CC99]">/UX</span> <span className="text-black">Designer &amp;</span>
                 <br />
                 <span className="text-black">Graphics Designer</span>
