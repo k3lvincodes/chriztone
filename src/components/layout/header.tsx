@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 
 export default function Header() {
@@ -20,7 +20,7 @@ export default function Header() {
           </Link>
           <span className="text-black text-base font-light hidden sm:block">•</span>
         </div>
-        <nav className="hidden lg:flex items-center gap-x-[30px]">
+        <nav className="hidden lg:flex items-center gap-x-[30px] absolute left-1/2 -translate-x-1/2">
           {navLinks.map((link) => (
             <Link
               key={link.label}
@@ -46,6 +46,7 @@ export default function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right">
+                <SheetTitle className="sr-only">Menu</SheetTitle>
                 <div className="flex flex-col gap-6 p-6">
                   <Link href="/" className="text-2xl font-bold text-logo mb-4">
                     Chriztone
