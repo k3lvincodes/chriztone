@@ -1,1 +1,7 @@
-// Flows will be imported for their side effects in this file.
+import { config } from 'dotenv';
+config();
+
+import '@/ai/flows/suggest-typography-pairings.ts';
+import '@/ai/flows/extract-design-styles.ts';
+import '@/ai/flows/analyze-screenshot.ts';
+import '@/ai/flows/suggest-color-palette.ts';
