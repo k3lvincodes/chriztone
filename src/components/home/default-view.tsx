@@ -56,8 +56,8 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
         </div>
       </div>
 
-      <div className="relative h-[900px] flex items-center justify-center -mb-32">
-        <PhoneMockup id="phone-two" className="w-[300px] h-[800px] absolute top-0 -translate-x-12">
+      <div className="relative h-[900px] flex items-center justify-end -mb-32">
+        <PhoneMockup id="phone-two" className="w-[300px] h-[800px] absolute top-0 right-12">
           <div className="w-full h-full p-4 text-white" style={{background: 'linear-gradient(to bottom, #FF80B4, #A020F0)'}}>
               <div className="flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-white"><path d="m15 18-6-6 6-6"/></svg>
@@ -66,7 +66,7 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
             <p className="text-sm opacity-80 mt-1">is a transaction into a</p>
           </div>
         </PhoneMockup>
-        <PhoneMockup id="phone-one" className="w-[320px] h-[850px] absolute top-10 -translate-x-1/2 shadow-2xl">
+        <PhoneMockup id="phone-one" className="w-[320px] h-[850px] absolute top-10 right-0 shadow-2xl">
           <div className="w-full h-full bg-white p-4 space-y-4 overflow-y-auto">
             <div className="text-center">
               <p className="text-xl font-bold">Subscribe</p>
