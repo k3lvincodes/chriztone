@@ -22,6 +22,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'azure-wrong-tortoise-997.mypinata.cloud',
+        port: '',
+        pathname: '/**',
+      }
     ],
   },
 };

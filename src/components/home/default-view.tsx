@@ -57,6 +57,7 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
       </div>
 
       <div className="relative h-[900px] flex items-center justify-end -mb-32">
+        <Image src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeigxtetzktxivcogpz3ixdrrglolgzqkrhwexre7piytayg45n7cti" alt="Phone 1" width={300} height={800} className="absolute top-10 left-0" />
         <PhoneMockup id="phone-two" className="w-[300px] h-[800px] absolute top-0 right-12">
           <div className="w-full h-full p-4 text-white" style={{background: 'linear-gradient(to bottom, #FF80B4, #A020F0)'}}>
               <div className="flex items-center gap-2">
