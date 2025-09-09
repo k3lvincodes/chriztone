@@ -66,13 +66,6 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
             <p className="text-sm opacity-80 mt-1">is a transaction into a</p>
           </div>
         </PhoneMockup>
-        <PhoneMockup id="phone-one" className="w-[320px] h-[850px] absolute top-10 right-0 shadow-2xl">
-          <iframe
-            src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeigxtetzktxivcogpz3ixdrrglolgzqkrhwexre7piytayg45n7cti"
-            className="w-full h-full"
-            sandbox=""
-          />
-        </PhoneMockup>
       </div>
     </div>
   );
