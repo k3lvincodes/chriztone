@@ -48,8 +48,8 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
             </CardContent>
         </Card>
 
-        <div className="space-y-4">
-            <p className="text-base italic">
+        <div className="space-y-4 max-w-md">
+            <p className="text-base italic font-bold text-center">
                 <span className="text-black">Let's Bring Your Idea to </span>
                 <span className="text-primary">Reality</span>
             </p>
