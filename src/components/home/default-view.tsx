@@ -57,7 +57,7 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
       </div>
 
       <div className="relative h-[900px] flex items-center justify-end -mb-32">
-        <Image id="phone-one" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeigxtetzktxivcogpz3ixdrrglolgzqkrhwexre7piytayg45n7cti" alt="Phone 1" width={300} height={800} className="absolute top-10 left-0" />
+        <Image id="phone-one" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeigxtetzktxivcogpz3ixdrrglolgzqkrhwexre7piytayg45n7cti" alt="Phone 1" width={300} height={800} className="absolute top-10 right-0 z-10" />
         <Image id="phone-two" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafkreihwenfmhguuodhr66qojytmdmd4bc3jw7gcf2xynneitvygkpyah4" alt="Phone 2" width={300} height={800} className="absolute top-0 right-12" />
       </div>
     </div>
