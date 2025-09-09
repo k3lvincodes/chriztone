@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { WhatsAppIcon } from '@/components/icons/whatsapp';
-import { Instagram } from 'lucide-react';
+import { Instagram, Phone } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -15,7 +14,7 @@ export default function Footer() {
           rel="noopener noreferrer" 
           className="flex items-center gap-3 text-base text-white hover:text-gray-300 transition-colors group"
         >
-          <WhatsAppIcon className="h-6 w-6 text-green-500 group-hover:text-green-400 transition-colors" />
+          <Phone className="h-6 w-6 text-green-500 group-hover:text-green-400 transition-colors" />
           <span>+234 706 938 8791</span>
         </a>
         <a 
