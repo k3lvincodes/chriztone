@@ -57,16 +57,8 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
       </div>
 
       <div className="relative h-[900px] flex items-center justify-end -mb-32">
-        <Image src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeigxtetzktxivcogpz3ixdrrglolgzqkrhwexre7piytayg45n7cti" alt="Phone 1" width={300} height={800} className="absolute top-10 left-0" />
-        <PhoneMockup id="phone-two" className="w-[300px] h-[800px] absolute top-0 right-12">
-          <div className="w-full h-full p-4 text-white" style={{background: 'linear-gradient(to bottom, #FF80B4, #A020F0)'}}>
-              <div className="flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-white"><path d="m15 18-6-6 6-6"/></svg>
-                  <h2 className="font-bold text-xl">Classify transaction</h2>
-              </div>
-            <p className="text-sm opacity-80 mt-1">is a transaction into a</p>
-          </div>
-        </PhoneMockup>
+        <Image id="phone-one" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeigxtetzktxivcogpz3ixdrrglolgzqkrhwexre7piytayg45n7cti" alt="Phone 1" width={300} height={800} className="absolute top-10 left-0" />
+        <Image id="phone-two" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafkreihwenfmhguuodhr66qojytmdmd4bc3jw7gcf2xynneitvygkpyah4" alt="Phone 2" width={300} height={800} className="absolute top-0 right-12" />
       </div>
     </div>
   );
