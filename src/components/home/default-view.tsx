@@ -53,9 +53,6 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
                 <span className="text-black">Let's Bring Your Idea to </span>
                 <span className="text-primary">Reality</span>
             </p>
-            <Button size="lg" onClick={onUpload} className="w-full">
-                Analyze a Design
-            </Button>
         </div>
       </div>
 
