@@ -49,7 +49,10 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
         </Card>
 
         <div className="space-y-4">
-            <p className="text-2xl font-bold text-primary">Let's Bring Your Idea to Reality</p>
+            <p className="text-base italic">
+                <span className="text-black">Let's Bring Your Idea to </span>
+                <span className="text-primary">Reality</span>
+            </p>
             <Button size="lg" onClick={onUpload}>
                 Analyze a Design
             </Button>
@@ -57,8 +60,8 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
       </div>
 
       <div className="relative h-[900px] flex items-center justify-end -mb-32">
-        <Image id="phone-one" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeigxtetzktxivcogpz3ixdrrglolgzqkrhwexre7piytayg45n7cti" alt="Phone 1" width={1200} height={3200} className="absolute top-10 right-0 z-10" />
-        <Image id="phone-two" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafkreihwenfmhguuodhr66qojytmdmd4bc3jw7gcf2xynneitvygkpyah4" alt="Phone 2" width={1200} height={3200} className="absolute top-0 right-[-50%]" />
+        <Image id="phone-one" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeigxtetzktxivcogpz3ixdrrglolgzqkrhwexre7piytayg45n7cti" alt="Phone 1" width={1200} height={3200} className="absolute top-10 z-10 w-[48rem] h-auto right-[0%]" />
+        <Image id="phone-two" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafkreihwenfmhguuodhr66qojytmdmd4bc3jw7gcf2xynneitvygkpyah4" alt="Phone 2" width={1200} height={3200} className="absolute top-0 w-[48rem] h-auto right-[-50%]" />
       </div>
     </div>
   );
