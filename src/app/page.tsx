@@ -89,7 +89,7 @@ export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col bg-white text-foreground">
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow overflow-hidden">
         <div className="container mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8 pt-32 pb-16">
           {isLoading && <LoadingSkeleton />}
           {!isLoading && (analysisResult && uploadedImage) ? (
