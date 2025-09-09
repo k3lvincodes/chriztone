@@ -67,40 +67,11 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
           </div>
         </PhoneMockup>
         <PhoneMockup id="phone-one" className="w-[320px] h-[850px] absolute top-10 right-0 shadow-2xl">
-          <div className="w-full h-full bg-white p-4 space-y-4 overflow-y-auto">
-            <div className="text-center">
-              <p className="text-xl font-bold">Subscribe</p>
-              <p className="text-sm text-gray-500">Taste their own attention</p>
-            </div>
-            <div className="flex justify-around">
-              <div className="text-center">
-                <Image src="https://picsum.photos/80/80" data-ai-hint="portrait person" alt="Johny Vine" width={80} height={80} className="rounded-full mx-auto border-4 border-orange-400" />
-                <p className="font-bold mt-2">Johny Vine</p>
-                <p className="text-sm text-gray-500">643 Followers</p>
-              </div>
-              <div className="text-center">
-                 <Image src="https://picsum.photos/80/81" data-ai-hint="portrait person" alt="Nimasha" width={80} height={80} className="rounded-full mx-auto border-4 border-orange-400" />
-                <p className="font-bold mt-2">Nimasha</p>
-                <p className="text-sm text-gray-500">15453 Followers</p>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <div className="font-semibold text-sm">Jack <span className="font-normal text-gray-400">1 Day Ago</span></div>
-              <div className="flex gap-2">
-                  <Image src="https://picsum.photos/150/150" data-ai-hint="abstract portrait" alt="Post 1" width={150} height={150} className="rounded-lg w-1/2 object-cover" />
-                  <Image src="https://picsum.photos/150/151" data-ai-hint="musician neon" alt="Post 2" width={150} height={150} className="rounded-lg w-1/2 object-cover" />
-              </div>
-              <p className="text-xs text-gray-500">Music and reading make me happy, so I walked out of adversity, let me feel the vitality of life...</p>
-            </div>
-             <div className="space-y-4">
-              <div className="font-semibold text-sm">Bobbo <span className="font-normal text-gray-400">2 Day Ago</span></div>
-              <div className="flex gap-2">
-                  <Image src="https://picsum.photos/100/100" data-ai-hint="woman portrait" alt="Post 3" width={100} height={100} className="rounded-lg w-1/3 object-cover" />
-                  <Image src="https://picsum.photos/100/101" data-ai-hint="hand holding jar" alt="Post 4" width={100} height={100} className="rounded-lg w-1/3 object-cover" />
-                  <Image src="https://picsum.photos/100/102" data-ai-hint="statue neon" alt="Post 5" width={100} height={100} className="rounded-lg w-1/3 object-cover" />
-              </div>
-            </div>
-          </div>
+          <iframe
+            src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeigxtetzktxivcogpz3ixdrrglolgzqkrhwexre7piytayg45n7cti"
+            className="w-full h-full"
+            sandbox=""
+          />
         </PhoneMockup>
       </div>
     </div>
