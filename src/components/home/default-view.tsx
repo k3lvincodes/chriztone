@@ -48,17 +48,19 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
             </CardContent>
         </Card>
 
-        <div className="space-y-4 max-w-md mx-auto md:mx-0">
-            <p className="text-base italic font-bold text-center">
+        <div className="space-y-4 max-w-md mx-auto md:mx-0 text-center">
+            <p className="text-base italic font-bold">
                 <span className="text-black">Let's Bring Your Idea to </span>
                 <span className="text-primary">Reality</span>
             </p>
         </div>
       </div>
 
-      <div className="relative h-[600px] md:h-[900px] flex items-center justify-center md:justify-end -mb-32">
-        <Image id="phone-one" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeigxtetzktxivcogpz3ixdrrglolgzqkrhwexre7piytayg45n7cti" alt="Phone 1" width={1200} height={3200} className="absolute top-10 z-10 w-80 md:w-[48rem] h-auto right-auto md:right-[0%]" />
-        <Image id="phone-two" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafkreihwenfmhguuodhr66qojytmdmd4bc3jw7gcf2xynneitvygkpyah4" alt="Phone 2" width={1200} height={3200} className="absolute top-0 w-80 md:w-[48rem] h-auto right-auto md:right-[-50%] -right-1/4" />
+      <div className="relative h-[600px] md:h-auto -mb-32 flex justify-center md:justify-end">
+        <div className="relative w-[320px] h-[600px] md:w-[48rem] md:h-[900px]">
+            <Image id="phone-one" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeigxtetzktxivcogpz3ixdrrglolgzqkrhwexre7piytayg45n7cti" alt="Phone 1" width={1200} height={3200} className="absolute top-10 z-10 w-80 md:w-[48rem] h-auto left-0 md:left-auto md:right-0" />
+            <Image id="phone-two" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafkreihwenfmhguuodhr66qojytmdmd4bc3jw7gcf2xynneitvygkpyah4" alt="Phone 2" width={1200} height={3200} className="absolute top-0 w-80 md:w-[48rem] h-auto right-0 md:right-[-50%]" />
+        </div>
       </div>
     </div>
   );
