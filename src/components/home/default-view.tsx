@@ -19,7 +19,7 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
 
   return (
     <div className="grid md:grid-cols-2 gap-x-20 gap-y-16 items-start">
-      <div className="space-y-10 md:pt-12">
+      <div className="space-y-10 md:pt-12 text-center md:text-left">
         <div className="space-y-5">
             <p className="text-3xl font-bold text-black mb-[50px]">Hi! I'm Paul</p>
             <h1 className="text-[50px] font-semibold !leading-tight">
@@ -27,12 +27,12 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
                 <br />
                 <span className="text-black">Graphics Designer</span>
             </h1>
-            <p className="text-lg text-gray-700 max-w-lg">
+            <p className="text-lg text-gray-700 max-w-lg mx-auto md:mx-0">
                 Whether you're a startup or enterprise. Get <span className="text-[#9966FF]">premium app and website</span> designs that inspire action, and drive success.
             </p>
         </div>
 
-        <Card className="max-w-md shadow-lg rounded-xl">
+        <Card className="max-w-md shadow-lg rounded-xl mx-auto md:mx-0">
             <div className="bg-[#9966FF] text-white rounded-t-xl py-3 px-6 font-bold text-lg">
                 Graphics Design Services
             </div>
@@ -48,7 +48,7 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
             </CardContent>
         </Card>
 
-        <div className="space-y-4 max-w-md">
+        <div className="space-y-4 max-w-md mx-auto md:mx-0">
             <p className="text-base italic font-bold text-center">
                 <span className="text-black">Let's Bring Your Idea to </span>
                 <span className="text-primary">Reality</span>
@@ -56,9 +56,9 @@ const DefaultView: React.FC<DefaultViewProps> = ({ onUpload }) => {
         </div>
       </div>
 
-      <div className="relative h-[900px] flex items-center justify-end -mb-32">
-        <Image id="phone-one" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeigxtetzktxivcogpz3ixdrrglolgzqkrhwexre7piytayg45n7cti" alt="Phone 1" width={1200} height={3200} className="absolute top-10 z-10 w-[48rem] h-auto right-[0%]" />
-        <Image id="phone-two" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafkreihwenfmhguuodhr66qojytmdmd4bc3jw7gcf2xynneitvygkpyah4" alt="Phone 2" width={1200} height={3200} className="absolute top-0 w-[48rem] h-auto right-[-50%]" />
+      <div className="relative h-[600px] md:h-[900px] flex items-center justify-center md:justify-end -mb-32">
+        <Image id="phone-one" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeigxtetzktxivcogpz3ixdrrglolgzqkrhwexre7piytayg45n7cti" alt="Phone 1" width={1200} height={3200} className="absolute top-10 z-10 w-80 md:w-[48rem] h-auto right-auto md:right-[0%]" />
+        <Image id="phone-two" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafkreihwenfmhguuodhr66qojytmdmd4bc3jw7gcf2xynneitvygkpyah4" alt="Phone 2" width={1200} height={3200} className="absolute top-0 w-80 md:w-[48rem] h-auto right-auto md:right-[-50%] -right-1/4" />
       </div>
     </div>
   );
