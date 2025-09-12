@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Instagram, Phone } from 'lucide-react';
+import { BehanceIcon } from '@/components/icons/behance';
 
 export default function Footer() {
   return (
@@ -25,6 +26,15 @@ export default function Footer() {
         >
           <Instagram className="h-6 w-6" />
           <span>@chriztone_z</span>
+        </a>
+        <a 
+          href="https://www.behance.net/paulolaoye" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="flex items-center gap-3 text-base text-white hover:text-gray-300 transition-colors"
+        >
+          <BehanceIcon className="h-6 w-6" />
+          <span>@paulolaoye</span>
         </a>
       </div>
     </footer>
