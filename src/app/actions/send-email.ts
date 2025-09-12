@@ -29,7 +29,14 @@ export async function sendEmail(formData: z.infer<typeof contactFormSchema>) {
   const toEmail = "k3lvincodes@gmail.com";
 
   try {
-    const { subject } = await generateEmailSubject({ message });
+    let subject;
+    if (process.env.GEMINI_API_KEY) {
+      const subjectResult = await generateEmailSubject({ message });
+      subject = subjectResult.subject;
+    } else {
+      console.warn("GEMINI_API_KEY is not set. Falling back to default subject.");
+      subject = "New message from portfolio";
+    }
     
     const { data, error } = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>', // Must be a verified domain on Resend
@@ -48,6 +55,9 @@ export async function sendEmail(formData: z.infer<typeof contactFormSchema>) {
   } catch (error) {
     console.error('Email sending error:', error);
     if (error instanceof Error) {
+        if (error.message.includes('API_KEY_INVALID')) {
+            return { success: false, error: 'The Google AI API key is invalid. Please check your .env file.' };
+        }
         return { success: false, error: `An unexpected error occurred: ${error.message}` };
     }
     return { success: false, error: 'An unexpected error occurred.' };
