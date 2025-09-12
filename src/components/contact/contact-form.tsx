@@ -63,7 +63,11 @@ export default function ContactForm({ setOpen }: ContactFormProps) {
         setOpen(false);
         form.reset();
       } else {
-        throw new Error(result?.error || 'An unknown error occurred.');
+        toast({
+            variant: "destructive",
+            title: "Failed to Send Message",
+            description: result?.error || "Something went wrong. Please try again.",
+        });
       }
     } catch (error) {
        console.error("Failed to send email:", error);
