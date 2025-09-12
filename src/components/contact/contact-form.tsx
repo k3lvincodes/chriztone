@@ -17,6 +17,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { useState } from 'react';
 import { Loader2 } from 'lucide-react';
+import { sendEmail } from '@/app/actions/send-email';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -49,24 +50,31 @@ export default function ContactForm({ setOpen }: ContactFormProps) {
     },
   });
 
-  // This is a mock submission handler. In a real application, you would
-  // send the form data to a server or email service.
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
-    console.log(data);
-
-    // Simulate network request
-    await new Promise(resolve => setTimeout(resolve, 2000));
     
-    setIsSubmitting(false);
-
-    toast({
-      title: 'Message Sent!',
-      description: "Thanks for reaching out. I'll get back to you shortly.",
-    });
-
-    setOpen(false);
-    form.reset();
+    try {
+      const result = await sendEmail(data);
+      if (result?.success) {
+        toast({
+          title: 'Message Sent!',
+          description: "Thanks for reaching out. I'll get back to you shortly.",
+        });
+        setOpen(false);
+        form.reset();
+      } else {
+        throw new Error(result?.error || 'An unknown error occurred.');
+      }
+    } catch (error) {
+       console.error("Failed to send email:", error);
+       toast({
+        variant: "destructive",
+        title: "Failed to Send Message",
+        description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
