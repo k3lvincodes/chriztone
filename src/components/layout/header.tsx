@@ -1,9 +1,13 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 
 export default function Header() {
+  const pathname = usePathname();
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About Me' },
@@ -11,6 +15,7 @@ export default function Header() {
     { href: '#', label: 'My Work' },
     { href: '#', label: 'Testimonial' },
   ];
+
   return (
     <header className="py-4 px-4 sm:px-6 lg:px-8 w-full fixed top-2 left-1/2 -translate-x-1/2 z-50 max-w-[1440px]">
       <div className="mx-auto bg-[#D3D3D3] backdrop-blur-lg rounded-full px-5 py-2 flex items-center justify-between shadow-md h-[50px]">
@@ -20,17 +25,17 @@ export default function Header() {
           </Link>
         </div>
         <nav className="hidden lg:flex items-center gap-x-[30px] absolute left-1/2 -translate-x-1/2">
-          {navLinks.map((link) => (
+          {navLinks.map((link, index) => (
             <div key={link.label} className="flex items-center gap-x-2.5">
-                {link.label === 'Home' && <span className="text-black text-base font-light">•</span>}
-                <Link
+              {index > 0 && <span className="text-black text-base font-light">•</span>}
+              <Link
                 href={link.href}
                 className={`text-base text-gray-500 hover:text-primary transition-colors ${
-                    link.label === 'Home' ? 'font-bold' : ''
+                  pathname === link.href ? 'font-bold' : ''
                 }`}
-                >
+              >
                 {link.label}
-                </Link>
+              </Link>
             </div>
           ))}
         </nav>
@@ -55,7 +60,7 @@ export default function Header() {
                         key={link.label}
                         href={link.href}
                         className={`text-lg text-gray-600 hover:text-primary transition-colors ${
-                          link.label === 'Home' ? 'font-bold' : ''
+                          pathname === link.href ? 'font-bold' : ''
                         }`}
                       >
                         {link.label}
