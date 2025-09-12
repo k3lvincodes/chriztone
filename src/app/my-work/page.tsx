@@ -1,9 +1,14 @@
+'use client';
+
+import { useState } from 'react';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { ZoomIn, ZoomOut, X } from 'lucide-react';
 
 export default function MyWorkPage() {
   const works = [
@@ -17,6 +22,21 @@ export default function MyWorkPage() {
     { src: "https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeibjv5gy4xnn764tjng5fuatiksesqbeqz63r3a7eoi57pc2mgsbka/royalty%20sales.png", alt: "Royalty Sales" },
     { src: "https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeibjv5gy4xnn764tjng5fuatiksesqbeqz63r3a7eoi57pc2mgsbka/voting%20interface.jpg", alt: "Voting Interface" },
   ];
+
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [zoomLevel, setZoomLevel] = useState(1);
+
+  const openModal = (src: string) => {
+    setSelectedImage(src);
+    setZoomLevel(1);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
+
+  const zoomIn = () => setZoomLevel(prev => Math.min(prev + 0.2, 3));
+  const zoomOut = () => setZoomLevel(prev => Math.max(prev - 0.2, 0.5));
 
   return (
     <div className="flex min-h-screen flex-col bg-white text-foreground">
@@ -33,7 +53,11 @@ export default function MyWorkPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {works.map((work) => (
-                <Card key={work.src} className="overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <Card 
+                  key={work.src} 
+                  className="overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer"
+                  onClick={() => openModal(work.src)}
+                >
                   <div className="relative aspect-[4/3] w-full">
                     <Image
                       src={work.src}
@@ -58,6 +82,38 @@ export default function MyWorkPage() {
         </div>
       </main>
       <Footer />
+
+      {selectedImage && (
+        <Dialog open={!!selectedImage} onOpenChange={closeModal}>
+            <DialogContent className="max-w-4xl h-[90vh] p-0 !rounded-lg overflow-hidden">
+                <div className="relative w-full h-full flex items-center justify-center overflow-auto">
+                    <div 
+                        className="relative transition-transform duration-300" 
+                        style={{ transform: `scale(${zoomLevel})` }}
+                    >
+                        <Image
+                            src={selectedImage}
+                            alt="Enlarged work"
+                            width={1200}
+                            height={900}
+                            className="object-contain max-w-full max-h-full"
+                        />
+                    </div>
+                </div>
+                <div className="absolute top-4 right-4 flex gap-2">
+                    <Button variant="ghost" size="icon" onClick={zoomIn} className="bg-black/50 hover:bg-black/75 text-white">
+                        <ZoomIn />
+                    </Button>
+                    <Button variant="ghost" size="icon" onClick={zoomOut} className="bg-black/50 hover:bg-black/75 text-white">
+                        <ZoomOut />
+                    </Button>
+                    <Button variant="ghost" size="icon" onClick={closeModal} className="bg-black/50 hover:bg-black/75 text-white">
+                        <X />
+                    </Button>
+                </div>
+            </DialogContent>
+        </Dialog>
+      )}
     </div>
   );
 }
