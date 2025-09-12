@@ -25,9 +25,9 @@ export default function Header() {
           </Link>
         </div>
         <nav className="hidden lg:flex items-center gap-x-[30px] absolute left-1/2 -translate-x-1/2">
-          {navLinks.map((link, index) => (
+          {navLinks.map((link) => (
             <div key={link.label} className="flex items-center gap-x-2.5">
-              {index > 0 && <span className="text-black text-base font-light">•</span>}
+              {pathname === link.href && <span className="text-black text-base font-light">•</span>}
               <Link
                 href={link.href}
                 className={`text-base text-gray-500 hover:text-primary transition-colors ${
