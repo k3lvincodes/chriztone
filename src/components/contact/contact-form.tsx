@@ -74,7 +74,7 @@ export default function ContactForm({ setOpen }: ContactFormProps) {
        toast({
         variant: "destructive",
         title: "Failed to Send Message",
-        description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
+        description: "Something went wrong. Please try again.",
       });
     } finally {
       setIsSubmitting(false);

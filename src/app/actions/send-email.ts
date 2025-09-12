@@ -32,7 +32,7 @@ export async function sendEmail(formData: z.infer<typeof contactFormSchema>) {
     const { subject } = await generateEmailSubject({ message });
     
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>', // Must be a verified domain on Resend
+      from: 'Acme <onboarding@resend.dev>', // Must be a verified domain on Resend
       to: [toEmail],
       subject: subject,
       reply_to: email,
@@ -41,12 +41,15 @@ export async function sendEmail(formData: z.infer<typeof contactFormSchema>) {
 
     if (error) {
         console.error('Resend error:', error);
-        return { success: false, error: 'Failed to send email.' };
+        return { success: false, error: `Failed to send email. ${error.message}` };
     }
 
     return { success: true, data };
   } catch (error) {
     console.error('Email sending error:', error);
+    if (error instanceof Error) {
+        return { success: false, error: `An unexpected error occurred: ${error.message}` };
+    }
     return { success: false, error: 'An unexpected error occurred.' };
   }
 }
