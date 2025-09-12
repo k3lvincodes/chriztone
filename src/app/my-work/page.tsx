@@ -1,0 +1,63 @@
+import Header from '@/components/layout/header';
+import Footer from '@/components/layout/footer';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+
+export default function MyWorkPage() {
+  const works = [
+    { src: "https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeibjv5gy4xnn764tjng5fuatiksesqbeqz63r3a7eoi57pc2mgsbka/AXY%20ZEALY.jpg", alt: "Axy Zealy" },
+    { src: "https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeibjv5gy4xnn764tjng5fuatiksesqbeqz63r3a7eoi57pc2mgsbka/FUTURE%20DARK.jpg", alt: "Future Dark" },
+    { src: "https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeibjv5gy4xnn764tjng5fuatiksesqbeqz63r3a7eoi57pc2mgsbka/GADGET%20IMPORT.png", alt: "Gadget Import" },
+    { src: "https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeibjv5gy4xnn764tjng5fuatiksesqbeqz63r3a7eoi57pc2mgsbka/Israel%20Palestine.jpg", alt: "Israel Palestine" },
+    { src: "https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeibjv5gy4xnn764tjng5fuatiksesqbeqz63r3a7eoi57pc2mgsbka/OSI%20LAYER.jpg", alt: "OSI Layer" },
+    { src: "https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeibjv5gy4xnn764tjng5fuatiksesqbeqz63r3a7eoi57pc2mgsbka/Q.jpg", alt: "Q" },
+    { src: "https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeibjv5gy4xnn764tjng5fuatiksesqbeqz63r3a7eoi57pc2mgsbka/Q5.jpg", alt: "Q5" },
+    { src: "https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeibjv5gy4xnn764tjng5fuatiksesqbeqz63r3a7eoi57pc2mgsbka/royalty%20sales.png", alt: "Royalty Sales" },
+    { src: "https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeibjv5gy4xnn764tjng5fuatiksesqbeqz63r3a7eoi57pc2mgsbka/voting%20interface.jpg", alt: "Voting Interface" },
+  ];
+
+  return (
+    <div className="flex min-h-screen flex-col bg-white text-foreground">
+      <Header />
+      <main className="flex-grow overflow-hidden">
+        <div className="container mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 pt-32 pb-16">
+          <div className="space-y-12">
+            <div className="text-center">
+              <h1 className="text-4xl font-bold text-black sm:text-5xl">My Work</h1>
+              <p className="mt-4 text-lg text-gray-600">
+                A selection of my recent projects.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {works.map((work) => (
+                <Card key={work.src} className="overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                  <div className="relative aspect-[4/3] w-full">
+                    <Image
+                      src={work.src}
+                      alt={work.alt}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </Card>
+              ))}
+            </div>
+
+            <div className="text-center text-lg text-gray-700 space-y-4">
+              <p>Click on the link below to see more projects</p>
+              <Button asChild>
+                <Link href="https://www.behance.net/paulolaoye" target="_blank" rel="noopener noreferrer">
+                  View on Behance
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+}
