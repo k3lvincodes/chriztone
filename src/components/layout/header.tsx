@@ -13,7 +13,7 @@ export default function Header() {
     { href: '/about', label: 'About Me' },
     { href: '/services', label: 'Services' },
     { href: '#', label: 'My Work' },
-    { href: '#', label: 'Testimonial' },
+    { href: '/testimonial', label: 'Testimonial' },
   ];
 
   return (
