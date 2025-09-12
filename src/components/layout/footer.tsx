@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
-import { Instagram, Phone } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBehance } from '@fortawesome/free-brands-svg-icons';
+import { faBehance, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import ContactDialog from '@/components/contact/contact-dialog';
 
 export default function Footer() {
@@ -21,7 +21,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="flex items-center gap-3 text-base text-white hover:text-gray-300 transition-colors group"
         >
-          <Phone className="h-6 w-6 text-green-500 group-hover:text-green-400 transition-colors" />
+          <FontAwesomeIcon icon={faWhatsapp} className="h-6 w-6 text-green-500 group-hover:text-green-400 transition-colors" />
           <span>+234 706 938 8791</span>
         </a>
         <a
