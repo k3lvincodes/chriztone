@@ -23,20 +23,25 @@ export async function sendEmail(formData: z.infer<typeof contactFormSchema>) {
     return { success: false, error: 'Email service is not configured.' };
   }
 
-  const resend = new Resend(process.env.RESEND_API_KEY);
-
   const { name, email, message } = parsedData.data;
-  const toEmail = "opauloluwasetemi@gmail.com";
+  const toEmail = "k3lvincodes@gmail.com";
 
   try {
     let subject;
     if (process.env.GEMINI_API_KEY) {
-      const subjectResult = await generateEmailSubject({ message });
-      subject = subjectResult.subject;
+      try {
+        const subjectResult = await generateEmailSubject({ message });
+        subject = subjectResult.subject;
+      } catch (aiError) {
+         console.error('AI subject generation failed:', aiError);
+         subject = "New message from portfolio"; // Fallback subject
+      }
     } else {
       console.warn("GEMINI_API_KEY is not set. Falling back to default subject.");
       subject = "New message from portfolio";
     }
+    
+    const resend = new Resend(process.env.RESEND_API_KEY);
     
     const { data, error } = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>', // Must be a verified domain on Resend
@@ -55,9 +60,7 @@ export async function sendEmail(formData: z.infer<typeof contactFormSchema>) {
   } catch (error) {
     console.error('Email sending error:', error);
     if (error instanceof Error) {
-        if (error.message.includes('API_KEY_INVALID')) {
-            return { success: false, error: 'The Google AI API key is invalid. Please check your .env file.' };
-        }
+        // This will catch errors from Resend client instantiation or other issues.
         return { success: false, error: `An unexpected error occurred: ${error.message}` };
     }
     return { success: false, error: 'An unexpected error occurred.' };
