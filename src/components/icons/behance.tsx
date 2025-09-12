@@ -13,9 +13,9 @@ export const BehanceIcon = (props: React.SVGProps<SVGSVGElement>) => (
         strokeLinejoin="round"
         {...props}
     >
-        <path d="M22 6h-8v4h8V6Z"/>
-        <path d="M14 14h8v4h-8v-4Z"/>
-        <path d="M2 6h6v12H2V6Z"/>
-        <path d="M8 12h4"/>
+        <path d="M14 6H8v12h6" />
+        <path d="M14 12H8" />
+        <path d="M18 10h-2V8h2" />
+        <path d="M18 16h-2v-2h2" />
     </svg>
 )
