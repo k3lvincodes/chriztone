@@ -3,6 +3,7 @@
 import { z } from 'zod';
 import { Resend } from 'resend';
 import ContactFormEmail from '@/emails/contact-form-email';
+import { generateEmailSubject } from '@/ai/flows/generate-email-subject';
 
 const contactFormSchema = z.object({
   name: z.string().min(2),
@@ -28,10 +29,12 @@ export async function sendEmail(formData: z.infer<typeof contactFormSchema>) {
   const toEmail = "k3lvincodes@gmail.com";
 
   try {
+    const { subject } = await generateEmailSubject({ message });
+    
     const { data, error } = await resend.emails.send({
       from: 'Chriztone Portfolio <onboarding@resend.dev>', // Must be a verified domain on Resend
       to: [toEmail],
-      subject: `New message from ${name}`,
+      subject: subject,
       reply_to: email,
       react: ContactFormEmail({ name, email, message }),
     });
