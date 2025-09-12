@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
+import ContactDialog from '@/components/contact/contact-dialog';
 
 export default function Header() {
   const pathname = usePathname();
@@ -40,9 +41,13 @@ export default function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-4">
-          <Button className="rounded-full px-10 h-10 bg-[#A020F0] text-white hover:bg-[#A020F0]/90 hidden sm:inline-flex">
-            Contact Me
-          </Button>
+          <ContactDialog
+            trigger={
+              <Button className="rounded-full px-10 h-10 bg-[#A020F0] text-white hover:bg-[#A020F0]/90 hidden sm:inline-flex">
+                Contact Me
+              </Button>
+            }
+          />
           <div className="lg:hidden">
             <Sheet>
               <SheetTrigger asChild>
@@ -67,9 +72,13 @@ export default function Header() {
                       </Link>
                     ))}
                   </nav>
-                  <Button className="mt-6 rounded-full px-10 h-12 bg-[#A020F0] text-white hover:bg-[#A020F0]/90">
-                    Contact Me
-                  </Button>
+                  <ContactDialog
+                    trigger={
+                      <Button className="mt-6 rounded-full px-10 h-12 bg-[#A020F0] text-white hover:bg-[#A020F0]/90 w-full">
+                        Contact Me
+                      </Button>
+                    }
+                  />
                 </div>
               </SheetContent>
             </Sheet>
