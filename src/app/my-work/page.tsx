@@ -7,7 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { ZoomIn, ZoomOut, X } from 'lucide-react';
 
 export default function MyWorkPage() {
@@ -86,6 +86,7 @@ export default function MyWorkPage() {
       {selectedImage && (
         <Dialog open={!!selectedImage} onOpenChange={closeModal}>
             <DialogContent className="max-w-4xl h-[90vh] p-0 !rounded-lg overflow-hidden">
+                 <DialogTitle className="sr-only">Enlarged View</DialogTitle>
                 <div className="relative w-full h-full flex items-center justify-center overflow-auto">
                     <div 
                         className="relative transition-transform duration-300" 
