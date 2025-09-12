@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Instagram, Phone } from 'lucide-react';
-import { BehanceIcon } from '@/components/icons/behance';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -33,7 +33,7 @@ export default function Footer() {
           rel="noopener noreferrer" 
           className="flex items-center gap-3 text-base text-white hover:text-gray-300 transition-colors"
         >
-          <BehanceIcon className="h-6 w-6" />
+          <Image src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafkreiamnxcmyx2k7rqtelrma2maxu54onlvtqebsqaiytepprgf3t5va4" alt="Behance" width={24} height={24} />
           <span>@paulolaoye</span>
         </a>
       </div>
