@@ -32,7 +32,7 @@ export async function sendEmail(formData: z.infer<typeof contactFormSchema>) {
     const { subject } = await generateEmailSubject({ message });
     
     const { data, error } = await resend.emails.send({
-      from: 'Chriztone Portfolio <onboarding@resend.dev>', // Must be a verified domain on Resend
+      from: 'Portfolio Contact <onboarding@resend.dev>', // Must be a verified domain on Resend
       to: [toEmail],
       subject: subject,
       reply_to: email,
