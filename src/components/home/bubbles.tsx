@@ -27,12 +27,11 @@ const Bubbles = () => {
                 animationDelay: `${Math.random() * 10}s`,
                 filter: `blur(${Math.random() * 2}px)`,
                 transform: `scale(${Math.random() * 0.5 + 0.5})`,
-                opacity: 0,
             };
             return (
                 <div
                     key={id}
-                    className="absolute bottom-0 rounded-full animate-[rise_25s_infinite] motion-reduce:animate-none"
+                    className="bubble"
                     style={style}
                 ></div>
             );
@@ -44,7 +43,7 @@ const Bubbles = () => {
     }, []);
 
     return (
-        <div className="fixed top-0 left-0 w-full h-full overflow-hidden" style={{ zIndex: 2000 }}>
+        <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none" style={{ zIndex: 2000 }}>
             {bubbles}
         </div>
     );
