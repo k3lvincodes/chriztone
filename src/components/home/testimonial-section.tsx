@@ -1,8 +1,6 @@
-import Header from '@/components/layout/header';
-import Footer from '@/components/layout/footer';
 import { Card, CardContent } from '@/components/ui/card';
 
-export default function TestimonialPage() {
+export default function TestimonialSection() {
   const testimonials = [
     {
       quote: "Professional, timely, and incredibly talented. Paul delivers designs that are modern, impactful, and perfectly aligned with what we need. Truly a pleasure to work with!",
@@ -23,10 +21,8 @@ export default function TestimonialPage() {
   ];
 
   return (
-    <div className="flex min-h-screen flex-col bg-white text-foreground">
-      <Header />
-      <main className="flex-grow overflow-hidden">
-        <div className="container mx-auto max-w-[1000px] px-4 sm:px-6 lg:px-8 pt-32 pb-16">
+    <section id="testimonial" className="py-16 lg:py-24">
+        <div className="container mx-auto max-w-[1000px] px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
             <div className="text-center">
               <h1 className="text-4xl font-bold text-black sm:text-5xl">Testimonials</h1>
@@ -49,8 +45,6 @@ export default function TestimonialPage() {
             </div>
           </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+    </section>
   );
 }

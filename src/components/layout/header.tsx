@@ -6,16 +6,36 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import ContactDialog from '@/components/contact/contact-dialog';
+import React from 'react';
 
 export default function Header() {
   const pathname = usePathname();
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About Me' },
-    { href: '/services', label: 'Services' },
-    { href: '/my-work', label: 'My Work' },
-    { href: '/testimonial', label: 'Testimonial' },
+    { href: '/#about', label: 'About Me' },
+    { href: '/#services', label: 'Services' },
+    { href: '/#my-work', label: 'My Work' },
+    { href: '/#testimonial', label: 'Testimonial' },
   ];
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+    if (href.startsWith('/#')) {
+        e.preventDefault();
+        const targetId = href.substring(2);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            const headerOffset = 80; // Adjust this value to account for your fixed header's height
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+  };
+
 
   return (
     <header className="py-4 px-4 sm:px-6 lg:px-8 w-full fixed top-2 left-1/2 -translate-x-1/2 z-50 max-w-[1440px]">
@@ -28,12 +48,11 @@ export default function Header() {
         <nav className="hidden lg:flex items-center gap-x-[30px] absolute left-1/2 -translate-x-1/2">
           {navLinks.map((link) => (
             <div key={link.label} className="flex items-center gap-x-2.5">
-              {pathname === link.href && <span className="text-black text-base font-light">•</span>}
+               {/* This logic for showing a dot is tricky with scroll-based navigation, so we'll simplify */}
               <Link
                 href={link.href}
-                className={`text-base text-gray-500 hover:text-primary transition-colors ${
-                  pathname === link.href ? 'font-bold' : ''
-                }`}
+                onClick={(e) => handleScroll(e, link.href)}
+                className="text-base text-gray-500 hover:text-primary transition-colors"
               >
                 {link.label}
               </Link>
@@ -64,9 +83,12 @@ export default function Header() {
                       <Link
                         key={link.label}
                         href={link.href}
-                        className={`text-lg text-gray-600 hover:text-primary transition-colors ${
-                          pathname === link.href ? 'font-bold' : ''
-                        }`}
+                        onClick={(e) => {
+                            handleScroll(e, link.href);
+                            // Additionally, you might want to close the sheet here.
+                            // This requires passing down the `setOpen` from a `useState` for the Sheet.
+                        }}
+                        className="text-lg text-gray-600 hover:text-primary transition-colors"
                       >
                         {link.label}
                       </Link>

@@ -1,9 +1,7 @@
-import Header from '@/components/layout/header';
-import Footer from '@/components/layout/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check } from 'lucide-react';
 
-export default function ServicesPage() {
+export default function ServicesSection() {
   const services = [
     'User Interface/User Experience Design',
     'Wireframing',
@@ -15,10 +13,8 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="flex min-h-screen flex-col bg-white text-foreground">
-      <Header />
-      <main className="flex-grow overflow-hidden">
-        <div className="container mx-auto max-w-[1000px] px-4 sm:px-6 lg:px-8 pt-32 pb-16">
+    <section id="services" className="py-16 lg:py-24">
+        <div className="container mx-auto max-w-[1000px] px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
             <div className="text-center">
               <h1 className="text-4xl font-bold text-black sm:text-5xl">My Services</h1>
@@ -52,8 +48,6 @@ export default function ServicesPage() {
             </div>
           </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+    </section>
   );
 }

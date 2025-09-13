@@ -1,8 +1,6 @@
 'use client';
 
 import { useState, useRef, MouseEvent, WheelEvent } from 'react';
-import Header from '@/components/layout/header';
-import Footer from '@/components/layout/footer';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -10,7 +8,7 @@ import { Card } from '@/components/ui/card';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { ZoomIn, ZoomOut, X, Move } from 'lucide-react';
 
-export default function MyWorkPage() {
+export default function MyWorkSection() {
   const works = [
     { src: "https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeibjv5gy4xnn764tjng5fuatiksesqbeqz63r3a7eoi57pc2mgsbka/AXY%20ZEALY.jpg", alt: "Axy Zealy" },
     { src: "https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeibjv5gy4xnn764tjng5fuatiksesqbeqz63r3a7eoi57pc2mgsbka/FUTURE%20DARK.jpg", alt: "Future Dark" },
@@ -84,10 +82,8 @@ export default function MyWorkPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-white text-foreground">
-      <Header />
-      <main className="flex-grow overflow-hidden">
-        <div className="container mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 pt-32 pb-16">
+    <section id="my-work" className="py-16 lg:py-24 bg-gray-50">
+        <div className="container mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
             <div className="text-center">
               <h1 className="text-4xl font-bold text-black sm:text-5xl">My Work</h1>
@@ -125,8 +121,6 @@ export default function MyWorkPage() {
             </div>
           </div>
         </div>
-      </main>
-      <Footer />
 
       {selectedImage && (
         <Dialog open={!!selectedImage} onOpenChange={closeModal}>
@@ -177,6 +171,6 @@ export default function MyWorkPage() {
             </DialogContent>
         </Dialog>
       )}
-    </div>
+    </section>
   );
 }
