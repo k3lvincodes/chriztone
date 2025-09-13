@@ -6,17 +6,44 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import ContactDialog from '@/components/contact/contact-dialog';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { cn } from '@/lib/utils';
 
 export default function Header() {
   const pathname = usePathname();
+  const [activeSection, setActiveSection] = useState('home');
+  
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/#about', label: 'About Me' },
-    { href: '/#services', label: 'Services' },
-    { href: '/#my-work', label: 'My Work' },
-    { href: '/#testimonial', label: 'Testimonial' },
+    { href: '/#home', label: 'Home', id: 'home' },
+    { href: '/#about', label: 'About Me', id: 'about' },
+    { href: '/#services', label: 'Services', id: 'services' },
+    { href: '/#my-work', label: 'My Work', id: 'my-work' },
+    { href: '/#testimonial', label: 'Testimonial', id: 'testimonial' },
   ];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-30% 0px -70% 0px' } 
+    );
+
+    const sections = navLinks.map(link => document.getElementById(link.id)).filter(Boolean);
+    sections.forEach((section) => {
+        if(section) observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        if(section) observer.unobserve(section);
+      });
+    };
+  }, [navLinks]);
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
     if (href.startsWith('/#')) {
@@ -24,7 +51,7 @@ export default function Header() {
         const targetId = href.substring(2);
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
-            const headerOffset = 80; // Adjust this value to account for your fixed header's height
+            const headerOffset = 80;
             const elementPosition = targetElement.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -48,12 +75,20 @@ export default function Header() {
         <nav className="hidden lg:flex items-center gap-x-[30px] absolute left-1/2 -translate-x-1/2">
           {navLinks.map((link) => (
             <div key={link.label} className="flex items-center gap-x-2.5">
-               {/* This logic for showing a dot is tricky with scroll-based navigation, so we'll simplify */}
-              <Link
+               <Link
                 href={link.href}
                 onClick={(e) => handleScroll(e, link.href)}
-                className="text-base text-gray-500 hover:text-primary transition-colors"
+                className={cn(
+                  "flex items-center gap-2 text-base text-gray-500 hover:text-primary transition-all",
+                  {
+                    "font-bold text-primary": activeSection === link.id,
+                  }
+                )}
               >
+                <span className={cn(
+                  "h-1.5 w-1.5 rounded-full bg-primary transition-all duration-300",
+                  activeSection === link.id ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+                )}></span>
                 {link.label}
               </Link>
             </div>
@@ -85,10 +120,11 @@ export default function Header() {
                         href={link.href}
                         onClick={(e) => {
                             handleScroll(e, link.href);
-                            // Additionally, you might want to close the sheet here.
-                            // This requires passing down the `setOpen` from a `useState` for the Sheet.
                         }}
-                        className="text-lg text-gray-600 hover:text-primary transition-colors"
+                        className={cn(
+                          "text-lg text-gray-600 hover:text-primary transition-colors",
+                          { "font-bold text-primary": activeSection === link.id }
+                        )}
                       >
                         {link.label}
                       </Link>
