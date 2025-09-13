@@ -98,7 +98,7 @@
   position: absolute;
   bottom: -100px;
   border-radius: 50%;
-  opacity: 0.3;
+  opacity: 0.1;
   animation: rise 15s linear infinite;
 }
 
