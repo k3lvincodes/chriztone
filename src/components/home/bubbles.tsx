@@ -5,39 +5,12 @@ const Bubbles = () => {
     const [bubbles, setBubbles] = useState<JSX.Element[]>([]);
 
     useEffect(() => {
-        const colors = [
-            'hsl(var(--primary) / 0.7)',
-            'hsl(var(--accent) / 0.7)',
-            'hsl(var(--secondary) / 0.7)',
-            'hsl(var(--chart-1) / 0.7)',
-            'hsl(var(--chart-2) / 0.7)',
-            'hsl(var(--chart-3) / 0.7)',
-            'hsl(var(--chart-4) / 0.7)',
-            'hsl(var(--chart-5) / 0.7)',
-        ];
-
-        const createBubble = (id: number) => {
-            const size = Math.random() * 60 + 10; // 10px to 70px
-            const style = {
-                width: `${size}px`,
-                height: `${size}px`,
-                backgroundColor: colors[Math.floor(Math.random() * colors.length)],
-                left: `${Math.random() * 100}%`,
-                animationDuration: `${Math.random() * 15 + 10}s`, // 10s to 25s
-                animationDelay: `${Math.random() * 10}s`,
-                filter: `blur(${Math.random() * 2}px)`,
-                transform: `scale(${Math.random() * 0.5 + 0.5})`,
-            };
-            return (
-                <div
-                    key={id}
-                    className="bubble"
-                    style={style}
-                ></div>
-            );
-        };
-        
-        const bubbleElements = Array.from({ length: 40 }).map((_, i) => createBubble(i));
+        // This component now generates empty bubble divs.
+        // All styling and animation is handled in globals.css with nth-child selectors
+        // to match the user's request.
+        const bubbleElements = Array.from({ length: 40 }).map((_, i) => (
+            <div key={i} className="bubble"></div>
+        ));
         setBubbles(bubbleElements);
 
     }, []);
