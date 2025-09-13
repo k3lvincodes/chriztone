@@ -17,7 +17,11 @@ export default function ServicesSection() {
         <div className="container mx-auto max-w-[1000px] px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
             <div className="text-center">
-              <h1 className="text-4xl font-bold text-black sm:text-5xl">My <span className="text-primary">Services</span></h1>
+              <h1 className="text-4xl font-bold text-black sm:text-5xl">
+                <span className="bg-gradient-to-r from-black to-primary text-transparent bg-clip-text">
+                  My Services
+                </span>
+              </h1>
               <p className="mt-4 text-lg text-gray-600">
                 A comprehensive suite of design services to bring your ideas to life.
               </p>
