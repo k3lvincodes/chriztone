@@ -4,8 +4,8 @@ import './globals.css';
 import Bubbles from '@/components/home/bubbles';
 
 export const metadata: Metadata = {
-  title: 'Chriztone Assistant',
-  description: 'AI-powered design analysis and style guide generation.',
+  title: 'Chriztone',
+  description: 'Creative UI/UX and Graphics Designer Portfolio.',
 };
 
 export default function RootLayout({
