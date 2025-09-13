@@ -54,7 +54,7 @@ const DefaultView: React.FC = () => {
         <div className="relative h-[600px] md:h-auto flex justify-center md:justify-end">
             <div className="relative w-full h-[600px] md:w-[48rem] md:h-[900px] flex justify-center ml-[80px] md:ml-0 md:-mb-32">
                 <Image id="phone-one" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafybeigxtetzktxivcogpz3ixdrrglolgzqkrhwexre7piytayg45n7cti" alt="Phone 1" width={1200} height={3200} className="absolute top-10 z-10 w-80 md:w-[48rem] h-auto left-1/2 -translate-x-[calc(50%+20px)] md:left-auto md:right-0 md:translate-x-0" />
-                <Image id="phone-two" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafkreihwenfmhguuodhr66qojytmdmd4bc3jw7gcf2xynneitvygkpyah4" alt="Phone 2" width={1200} height={3200} className="absolute top-0 w-80 md:w-[48rem] h-auto right-1/2 translate-x-1/2 md:right-[-50%] md:translate-x-0 -rotate-45 md:rotate-0" />
+                <Image id="phone-two" src="https://azure-wrong-tortoise-997.mypinata.cloud/ipfs/bafkreihwenfmhguuodhr66qojytmdmd4bc3jw7gcf2xynneitvygkpyah4" alt="Phone 2" width={1200} height={3200} className="absolute top-0 z-0 w-80 md:w-[48rem] h-auto right-1/2 translate-x-1/2 md:right-[-50%] md:translate-x-0 -rotate-45 md:rotate-0" />
             </div>
         </div>
         </div>
