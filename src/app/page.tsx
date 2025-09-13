@@ -32,9 +32,9 @@ export default function HomePage() {
 
 
   return (
-    <div className="flex min-h-screen flex-col bg-white text-foreground">
+    <div className="flex min-h-screen flex-col bg-white text-foreground relative">
       <Header />
-      <main className="flex-grow overflow-hidden">
+      <main className="flex-grow overflow-hidden z-10">
         <DefaultView />
         <AboutSection />
         <ServicesSection />

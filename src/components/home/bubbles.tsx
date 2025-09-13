@@ -6,21 +6,27 @@ const Bubbles = () => {
 
     useEffect(() => {
         const colors = [
-            'hsl(var(--primary))',
-            'hsl(var(--accent))',
-            '#00CC99',
-            '#9966FF'
+            'hsl(var(--primary) / 0.7)',
+            'hsl(var(--accent) / 0.7)',
+            'hsl(var(--secondary) / 0.7)',
+            'hsl(var(--chart-1) / 0.7)',
+            'hsl(var(--chart-2) / 0.7)',
+            'hsl(var(--chart-3) / 0.7)',
+            'hsl(var(--chart-4) / 0.7)',
+            'hsl(var(--chart-5) / 0.7)',
         ];
 
         const createBubble = (id: number) => {
-            const size = Math.random() * 4 + 1; // 1rem to 5rem
+            const size = Math.random() * 60 + 10; // 10px to 70px
             const style = {
-                width: `${size}rem`,
-                height: `${size}rem`,
+                width: `${size}px`,
+                height: `${size}px`,
                 backgroundColor: colors[Math.floor(Math.random() * colors.length)],
                 left: `${Math.random() * 100}%`,
-                animationDuration: `${Math.random() * 15 + 10}s`,
+                animationDuration: `${Math.random() * 15 + 10}s`, // 10s to 25s
                 animationDelay: `${Math.random() * 10}s`,
+                filter: `blur(${Math.random() * 2}px)`,
+                transform: `scale(${Math.random() * 0.5 + 0.5})`,
                 opacity: 0,
             };
             return (
@@ -32,13 +38,13 @@ const Bubbles = () => {
             );
         };
         
-        const bubbleElements = Array.from({ length: 30 }).map((_, i) => createBubble(i));
+        const bubbleElements = Array.from({ length: 40 }).map((_, i) => createBubble(i));
         setBubbles(bubbleElements);
 
     }, []);
 
     return (
-        <div className="fixed top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div className="fixed top-0 left-0 w-full h-full overflow-hidden" style={{ zIndex: 2000 }}>
             {bubbles}
         </div>
     );
