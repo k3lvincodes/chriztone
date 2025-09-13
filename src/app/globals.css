@@ -98,10 +98,8 @@
   position: absolute;
   bottom: -100px;
   border-radius: 50%;
-  opacity: 0.2;
-  animation-name: rise;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  opacity: 0.3;
+  animation: rise 15s linear infinite;
 }
 
 .bubble:nth-child(8n+1) { background-color: hsl(var(--primary) / 0.5); }
