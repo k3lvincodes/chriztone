@@ -15,7 +15,7 @@ export default function AboutSection() {
         <div className="container mx-auto max-w-[1000px] px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
             <div className="text-center">
-              <h1 className="text-4xl font-bold text-black sm:text-5xl">About Me</h1>
+              <h1 className="text-4xl font-bold text-black sm:text-5xl">About <span className="text-primary">Me</span></h1>
               <p className="mt-4 text-lg text-gray-600">
                 UI/UX and Graphics Designer
               </p>
