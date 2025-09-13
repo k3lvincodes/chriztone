@@ -24,7 +24,7 @@ export async function sendEmail(formData: z.infer<typeof contactFormSchema>) {
   }
 
   const { name, email, message } = parsedData.data;
-  const toEmail = "k3lvincodes@gmail.com";
+  const toEmail = "opauloluwasetemi@gmail.com";
 
   try {
     let subject;
